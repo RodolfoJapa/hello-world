@@ -1,2 +1,4 @@
 # hello-world
- "Este repositorio es para practicar el flujo de GitHub".
+My name is Rodolfo I´m student
+My life in mi contry, Republic Dominican
+
