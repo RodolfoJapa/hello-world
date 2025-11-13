@@ -1,0 +1,111 @@
+/* === Estilo global === */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: radial-gradient(circle at top, #0f0f10, #000000);
+    color: white;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    perspective: 1000px;
+}
+
+/* === Contenedor principal === */
+.container {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 25px;
+    padding: 40px;
+    width: 380px;
+    box-shadow: 0 0 40px rgba(0, 255, 255, 0.15);
+    transform: rotateX(8deg);
+    transition: transform 0.6s ease, box-shadow 0.6s ease;
+}
+.container:hover {
+    transform: rotateX(0deg) scale(1.02);
+    box-shadow: 0 0 60px rgba(0, 255, 255, 0.3);
+}
+
+/* === Perfil === */
+.profile img.avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 3px solid #00c6ff;
+    object-fit: cover;
+    margin-bottom: 10px;
+    box-shadow: 0 0 20px #00c6ff;
+    transition: transform 0.4s ease;
+}
+.profile img.avatar:hover {
+    transform: rotateY(20deg) scale(1.1);
+}
+
+/* === Texto === */
+.profile h1 {
+    margin: 10px 0 5px 0;
+    font-size: 1.8em;
+    letter-spacing: 1px;
+}
+
+.profile p {
+    color: #bbb;
+    font-size: 0.95em;
+    margin-bottom: 30px;
+}
+
+/* === Botones de enlaces === */
+.links {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: stretch;
+}
+
+/* === Enlace individual === */
+.link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    text-decoration: none;
+    color: white;
+    background: var(--btn-color);
+    background: linear-gradient(135deg, var(--btn-color), #111);
+    font-weight: 600;
+    padding: 14px;
+    border-radius: 50px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+    transition: all 0.3s ease;
+    transform: translateZ(10px);
+}
+
+/* === Íconos e interacción === */
+.link i {
+    font-size: 1.4em;
+    filter: drop-shadow(0 0 5px rgba(255,255,255,0.5));
+}
+
+.link span {
+    display: inline-block;
+}
+
+/* === Efectos hover === */
+.link:hover {
+    transform: translateY(-4px) scale(1.05);
+    box-shadow: 0 0 25px var(--btn-color);
+    background: linear-gradient(90deg, #fff, var(--btn-color));
+    color: black;
+}
+
+/* === Animación de carga === */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.container {
+    animation: fadeIn 1s ease;
+}

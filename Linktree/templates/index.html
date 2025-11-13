@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ usuario.nombre }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="profile">
+            <img src="{{ url_for('static', filename=usuario.imagen) }}" alt="Foto de {{ usuario.nombre }}" class="avatar">
+            <h1>{{ usuario.nombre }}</h1>
+            <p>{{ usuario.descripcion }}</p>
+        </div>
+
+        <div class="links">
+            {% for enlace in enlaces %}
+            <a href="{{ enlace.url }}" target="_blank" class="link" style="--btn-color: {{ enlace.color }}">
+                <i class="{{ enlace.icono }}"></i>
+                <span>{{ enlace.nombre }}</span>
+            </a>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>
